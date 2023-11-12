@@ -2,7 +2,14 @@ import { Card, Text, Heading } from "@chakra-ui/react";
 
 export default function RoomCard({ name, desc }) {
   return (
-    <Card maxW="sm" bgColor="#242424">
+    <Card
+      maxW="sm"
+      bgColor="#242424"
+      border="1px"
+      borderColor="#55bd79"
+      overflow="hidden"
+      borderRadius="lg"
+    >
       <Heading
         size="md"
         className="blackBlock"
@@ -10,11 +17,10 @@ export default function RoomCard({ name, desc }) {
         pt={3}
         pl={3}
         pr={3}
-        borderTopRadius="lg"
       >
         {name}
       </Heading>
-      <Text className="blackBlock" p={3} borderBottomRadius="lg">
+      <Text className="blackBlock" p={3}>
         {desc}
       </Text>
     </Card>
