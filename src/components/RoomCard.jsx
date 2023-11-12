@@ -22,7 +22,7 @@ export default function RoomCard({ id, desc }) {
         >
           Room {id}
         </Heading>
-        <Text className="blackBlock" p={3}>
+        <Text className="blackBlock" color="gray" p={3}>
           {desc}
         </Text>
       </Card>
