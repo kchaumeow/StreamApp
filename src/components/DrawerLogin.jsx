@@ -9,6 +9,7 @@ import {
   DrawerOverlay,
   useDisclosure,
   Input,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -34,11 +35,10 @@ export default function DrawerLogin() {
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader className="blackBlock">
+          <DrawerCloseButton textColor="white" />
+          <DrawerHeader className="blackBlock" fontSize="x-large">
             Create your account
           </DrawerHeader>
-
           <DrawerBody className="grayBlock">
             <Input placeholder="Type here..." />
           </DrawerBody>
