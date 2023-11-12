@@ -1,5 +1,5 @@
 import { Stack } from "@chakra-ui/react";
-import AudioCard from "../components/AudioCard";
+import RoomCard from "../components/RoomCard";
 export default function Home() {
   return (
     <Stack
@@ -8,32 +8,12 @@ export default function Home() {
       className="grayBlock"
       justifyContent="center"
     >
-      <AudioCard
-        name="Marina and the diamonds"
+      <RoomCard
+        name="Room 1"
         desc="Listen to the greatest singer Marina and the diamonds with friends right now!"
       />
-      <AudioCard
-        name="Fahradsattel sein"
-        desc="Listen to the coolest song Fahrasattel with friends sein right now!"
-      />
-      <AudioCard
-        name="Fahradsattel sein"
-        desc="Listen to the coolest song Fahrasattel with friends sein right now!"
-      />
-      <AudioCard
-        name="Fahradsattel sein"
-        desc="Listen to the coolest song Fahrasattel with friends sein right now!"
-      />
-      <AudioCard
-        name="Fahradsattel sein"
-        desc="Listen to the coolest song Fahrasattel with friends sein right now!"
-      />
-      <AudioCard
-        name="Fahradsattel sein"
-        desc="Listen to the coolest song Fahrasattel with friends sein right now!"
-      />
-      <AudioCard
-        name="Fahradsattel sein"
+      <RoomCard
+        name="Room 2"
         desc="Listen to the coolest song Fahrasattel with friends sein right now!"
       />
     </Stack>

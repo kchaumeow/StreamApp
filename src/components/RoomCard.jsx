@@ -1,6 +1,6 @@
 import { Card, Text, Heading } from "@chakra-ui/react";
 
-export default function AudioCard({ name, desc }) {
+export default function RoomCard({ name, desc }) {
   return (
     <Card maxW="sm" bgColor="#242424">
       <Heading

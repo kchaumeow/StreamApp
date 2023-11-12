@@ -25,7 +25,7 @@ export default function DrawerLogin() {
         textColor="black"
         onClick={onOpen}
       >
-        Open
+        Register
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -40,7 +40,7 @@ export default function DrawerLogin() {
             Create your account
           </DrawerHeader>
           <DrawerBody className="grayBlock">
-            <Input placeholder="Type here..." />
+            <Input placeholder="Type your username" />
           </DrawerBody>
 
           <DrawerFooter className="blackBlock">
