@@ -9,11 +9,11 @@ export default function Home() {
       justifyContent="center"
     >
       <RoomCard
-        name="Room 1"
+        id="1"
         desc="Listen to the greatest singer Marina and the diamonds with friends right now!"
       />
       <RoomCard
-        name="Room 2"
+        id="2"
         desc="Listen to the coolest song Fahrasattel with friends sein right now!"
       />
     </Stack>
