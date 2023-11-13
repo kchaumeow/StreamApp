@@ -31,7 +31,7 @@ export default function DrawerLogin() {
       <Button
         ref={btnRef}
         variant="outline"
-        colorScheme="whatsapp"
+        colorScheme="green"
         onClick={onOpen}
       >
         Login
