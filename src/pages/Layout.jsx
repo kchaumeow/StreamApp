@@ -2,11 +2,12 @@ import { Button, Heading, Stack } from "@chakra-ui/react";
 import DrawerRegister from "../components/DrawerRegister";
 import { Link, Outlet } from "react-router-dom";
 import DrawerLogin from "../components/DrawLogin";
-const user = {
-  id: 1,
-  username: "Edward",
-  email: "ed@gmail.com",
-};
+// const user = {
+//   id: 1,
+//   username: "Edward",
+//   email: "ed@gmail.com",
+// };
+const user = undefined;
 export default function Layout({ children }) {
   return (
     <>

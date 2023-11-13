@@ -6,7 +6,6 @@ export default function RoomCard({ id, desc }) {
     <Link to={`/rooms/${id}`}>
       <Card
         maxW="sm"
-        bgColor="#242424"
         border="1px"
         borderColor="#55bd79"
         overflow="hidden"

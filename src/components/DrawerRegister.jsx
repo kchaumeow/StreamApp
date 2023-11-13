@@ -10,16 +10,20 @@ import {
   useDisclosure,
   Input,
   Stack,
+  InputGroup,
+  InputRightElement,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { useRef, useState } from "react";
 
 function registerUser(username, email, pass) {
   console.log(username, email, pass);
 }
 
 export default function DrawerRegister() {
+  const [show, setShow] = useState(false);
+  const handleClick = () => setShow(!show);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = useRef();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -60,13 +64,25 @@ export default function DrawerRegister() {
                 onChange={(e) => setEmail(e.target.value)}
                 borderColor="#55bd79"
               />
-              <Input
-                placeholder="Type your password"
-                type="email"
-                required
-                onChange={(e) => setPass(e.target.value)}
-                borderColor="#55bd79"
-              />
+              <InputGroup>
+                <Input
+                  placeholder="Type your password"
+                  type={show ? "text" : "password"}
+                  required
+                  onChange={(e) => setPass(e.target.value)}
+                  borderColor="#55bd79"
+                />
+                <InputRightElement width="4.5rem">
+                  <Button
+                    size="sm"
+                    colorScheme="green"
+                    color="black"
+                    onClick={handleClick}
+                  >
+                    {show ? "Hide" : "Show"}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
             </Stack>
           </DrawerBody>
 
