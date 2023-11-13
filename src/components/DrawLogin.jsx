@@ -49,34 +49,42 @@ export default function DrawerLogin() {
             Login to your account
           </DrawerHeader>
           <DrawerBody className="grayBlock">
-            <Stack gap={5}>
-              <Input
-                placeholder="Type your email"
-                type="email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-                borderColor="#55bd79"
-              />
-              <InputGroup>
+            <form
+              id="my-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                loginUser(email, pass);
+              }}
+            >
+              <Stack gap={5}>
                 <Input
-                  placeholder="Type your password"
-                  type={show ? "text" : "password"}
+                  placeholder="Type your email"
+                  type="email"
                   required
-                  onChange={(e) => setPass(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   borderColor="#55bd79"
                 />
-                <InputRightElement width="4.5rem">
-                  <Button
-                    size="sm"
-                    colorScheme="green"
-                    color="black"
-                    onClick={handleClick}
-                  >
-                    {show ? "Hide" : "Show"}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </Stack>
+                <InputGroup>
+                  <Input
+                    placeholder="Type your password"
+                    type={show ? "text" : "password"}
+                    required
+                    onChange={(e) => setPass(e.target.value)}
+                    borderColor="#55bd79"
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button
+                      size="sm"
+                      colorScheme="green"
+                      color="black"
+                      onClick={handleClick}
+                    >
+                      {show ? "Hide" : "Show"}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+              </Stack>
+            </form>
           </DrawerBody>
 
           <DrawerFooter className="blackBlock">
@@ -91,7 +99,8 @@ export default function DrawerLogin() {
             <Button
               colorScheme="green"
               textColor="black"
-              onClick={() => loginUser(email, pass)}
+              form="my-form"
+              type="submit"
             >
               Login
             </Button>

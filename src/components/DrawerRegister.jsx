@@ -47,43 +47,52 @@ export default function DrawerRegister() {
         <DrawerContent>
           <DrawerCloseButton textColor="white" />
           <DrawerHeader className="blackBlock" fontSize="x-large">
-            Create your account
+            Login to your account
           </DrawerHeader>
           <DrawerBody className="grayBlock">
-            <Stack gap={5}>
-              <Input
-                placeholder="Type your username"
-                required
-                onChange={(e) => setUsername(e.target.value)}
-                borderColor="#55bd79"
-              />
-              <Input
-                placeholder="Type your email"
-                type="email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-                borderColor="#55bd79"
-              />
-              <InputGroup>
+            <form
+              id="my-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                registerUser(username, email, pass);
+              }}
+            >
+              <Stack gap={5}>
                 <Input
-                  placeholder="Type your password"
-                  type={show ? "text" : "password"}
+                  placeholder="Type your username"
+                  type="text"
                   required
-                  onChange={(e) => setPass(e.target.value)}
+                  onChange={(e) => setUsername(e.target.value)}
                   borderColor="#55bd79"
                 />
-                <InputRightElement width="4.5rem">
-                  <Button
-                    size="sm"
-                    colorScheme="green"
-                    color="black"
-                    onClick={handleClick}
-                  >
-                    {show ? "Hide" : "Show"}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-            </Stack>
+                <Input
+                  placeholder="Type your email"
+                  type="email"
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                  borderColor="#55bd79"
+                />
+                <InputGroup>
+                  <Input
+                    placeholder="Type your password"
+                    type={show ? "text" : "password"}
+                    required
+                    onChange={(e) => setPass(e.target.value)}
+                    borderColor="#55bd79"
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button
+                      size="sm"
+                      colorScheme="green"
+                      color="black"
+                      onClick={handleClick}
+                    >
+                      {show ? "Hide" : "Show"}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+              </Stack>
+            </form>
           </DrawerBody>
 
           <DrawerFooter className="blackBlock">
@@ -98,9 +107,10 @@ export default function DrawerRegister() {
             <Button
               colorScheme="green"
               textColor="black"
-              onClick={() => registerUser(username, email, pass)}
+              form="my-form"
+              type="submit"
             >
-              Save
+              Login
             </Button>
           </DrawerFooter>
         </DrawerContent>
