@@ -17,3 +17,17 @@ export async function registerReq(name, email, password) {
       console.log(error);
     });
 }
+
+export async function loginReq(email, password) {
+  return instance
+    .post("/login", {
+      email: email,
+      password: password,
+    })
+    .then(function (response) {
+      return response.data;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}

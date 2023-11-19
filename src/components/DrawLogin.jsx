@@ -14,12 +14,16 @@ import {
   InputGroup,
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
+import { loginReq } from "../api";
+import { useDispatch } from "react-redux";
+import { setUser } from "../store/userSlice";
 
-function loginUser(email, pass) {
-  console.log(email, pass);
+async function loginUser(email, pass) {
+  return await loginReq(email, pass);
 }
 
 export default function DrawerLogin() {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -51,9 +55,10 @@ export default function DrawerLogin() {
           <DrawerBody className="grayBlock">
             <form
               id="my-form"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                loginUser(email, pass);
+                const user = await loginUser(email, pass);
+                dispatch(setUser(user));
               }}
             >
               <Stack gap={5}>

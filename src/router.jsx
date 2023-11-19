@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Room from "./pages/Room";
 import Layout from "./pages/Layout";
 import Profile from "./pages/Profile";
+import Protected from "./components/Protected";
 export const router = createBrowserRouter([
   {
     element: <Layout />,
@@ -13,11 +14,19 @@ export const router = createBrowserRouter([
         index: true,
       },
       {
-        element: <Room />,
+        element: (
+          <Protected>
+            <Room />
+          </Protected>
+        ),
         path: "/rooms/:id",
       },
       {
-        element: <Profile />,
+        element: (
+          <Protected>
+            <Profile />
+          </Protected>
+        ),
         path: "/users/:id",
       },
     ],

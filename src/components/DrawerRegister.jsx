@@ -51,7 +51,7 @@ export default function DrawerRegister() {
         <DrawerContent>
           <DrawerCloseButton textColor="white" />
           <DrawerHeader className="blackBlock" fontSize="x-large">
-            Login to your account
+            Create your account
           </DrawerHeader>
           <DrawerBody className="grayBlock">
             <form
@@ -59,7 +59,6 @@ export default function DrawerRegister() {
               onSubmit={async (e) => {
                 e.preventDefault();
                 const user = await registerUser(name, email, pass);
-                console.log(user);
                 dispatch(setUser(user));
               }}
             >
