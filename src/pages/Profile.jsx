@@ -1,15 +1,11 @@
 import { Heading, Stack } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
-const user = {
-  id: 1,
-  username: "Edward",
-  email: "ed@gmail.com",
-};
+import { useSelector } from "react-redux";
+import { userSelector } from "../store/selectors";
 export default function Profile() {
-  const { id } = useParams();
+  const user = useSelector(userSelector);
   return (
     <Stack direction="column" gap={2} placeItems="center" className="grayBlock">
-      <Heading className="grayBlock">{user.username}</Heading>
+      <Heading className="grayBlock">{user.name}</Heading>
       <Heading className="grayBlock">{user.email}</Heading>
     </Stack>
   );

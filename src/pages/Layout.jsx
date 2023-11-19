@@ -2,13 +2,12 @@ import { Button, Heading, Stack } from "@chakra-ui/react";
 import DrawerRegister from "../components/DrawerRegister";
 import { Link, Outlet } from "react-router-dom";
 import DrawerLogin from "../components/DrawLogin";
-// const user = {
-//   id: 1,
-//   username: "Edward",
-//   email: "ed@gmail.com",
-// };
-const user = undefined;
+import { useDispatch, useSelector } from "react-redux";
+import { userSelector } from "../store/selectors";
+import { setUser } from "../store/userSlice";
 export default function Layout({ children }) {
+  const user = useSelector(userSelector);
+  const dispatch = useDispatch();
   return (
     <>
       <Stack
@@ -25,10 +24,14 @@ export default function Layout({ children }) {
             <>
               <Link to={`/users/${1}`}>
                 <Button color="#242424" colorScheme="green">
-                  {user.username} profile
+                  {user.name} profile
                 </Button>
               </Link>
-              <Button colorScheme="red" color="#242424">
+              <Button
+                colorScheme="red"
+                color="#242424"
+                onClick={() => dispatch(setUser(null))}
+              >
                 Logout
               </Button>
             </>

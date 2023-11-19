@@ -14,17 +14,21 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
+import { registerReq } from "../api";
+import { useDispatch } from "react-redux";
+import { setUser } from "../store/userSlice";
 
-function registerUser(username, email, pass) {
-  console.log(username, email, pass);
+async function registerUser(name, email, pass) {
+  return await registerReq(name, email, pass);
 }
 
 export default function DrawerRegister() {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   return (
@@ -52,9 +56,11 @@ export default function DrawerRegister() {
           <DrawerBody className="grayBlock">
             <form
               id="my-form"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                registerUser(username, email, pass);
+                const user = await registerUser(name, email, pass);
+                console.log(user);
+                dispatch(setUser(user));
               }}
             >
               <Stack gap={5}>
@@ -62,7 +68,7 @@ export default function DrawerRegister() {
                   placeholder="Type your username"
                   type="text"
                   required
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
                   borderColor="#55bd79"
                 />
                 <Input
@@ -110,7 +116,7 @@ export default function DrawerRegister() {
               form="my-form"
               type="submit"
             >
-              Login
+              Save
             </Button>
           </DrawerFooter>
         </DrawerContent>

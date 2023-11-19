@@ -24,8 +24,9 @@ export default function Room() {
         >
           Room {id}
         </Heading>
-        <CardBody className="blackBlock"></CardBody>
-        <Chat />
+        <CardBody className="blackBlock">
+          <Chat />
+        </CardBody>
       </Card>
     </Box>
   );
