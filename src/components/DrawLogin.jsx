@@ -19,6 +19,7 @@ import { loginReq } from "../api";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
 import { showErrorLogOpts, showSuccessLogOpts } from "../utils/Toasts";
+import { setUserLocal } from "../utils/localStorage";
 
 async function loginUser(email, pass) {
   return await loginReq(email, pass);
@@ -69,6 +70,7 @@ export default function DrawerLogin() {
                   return;
                 }
                 dispatch(setUser(user));
+                setUserLocal(user);
                 toast(showSuccessLogOpts);
               }}
             >

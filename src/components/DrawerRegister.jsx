@@ -19,6 +19,7 @@ import { registerReq } from "../api";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
 import { showErrorRegOpts, showSuccessLogOpts } from "../utils/Toasts";
+import { setUserLocal } from "../utils/localStorage";
 
 async function registerUser(name, email, pass) {
   return await registerReq(name, email, pass);
@@ -70,6 +71,7 @@ export default function DrawerRegister() {
                   return;
                 }
                 dispatch(setUser(user));
+                setUserLocal(user);
                 toast(showSuccessLogOpts);
               }}
             >

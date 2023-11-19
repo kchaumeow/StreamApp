@@ -2,6 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
+  withCredentials: true,
 });
 export async function registerReq(name, email, password) {
   return instance
@@ -12,7 +13,7 @@ export async function registerReq(name, email, password) {
     })
     .then(function (response) {
       return response.data;
-    })
+    });
 }
 
 export async function loginReq(email, password) {
@@ -23,5 +24,11 @@ export async function loginReq(email, password) {
     })
     .then(function (response) {
       return response.data;
-    })
+    });
+}
+
+export async function getCurrUserReq() {
+  return instance.get("/me").then(function (response) {
+    return response.data;
+  });
 }

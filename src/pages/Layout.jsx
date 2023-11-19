@@ -5,9 +5,27 @@ import DrawerLogin from "../components/DrawLogin";
 import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../store/selectors";
 import { setUser } from "../store/userSlice";
-export default function Layout({ children }) {
-  const user = useSelector(userSelector);
+import { useEffect } from "react";
+import { getUserLocal, setUserLocal } from "../utils/localStorage";
+import { getCurrUserReq } from "../api";
+import { useToast } from "@chakra-ui/react";
+import { showErrorRegOpts } from "../utils/Toasts";
+
+export default function Layout() {
+  const toast = useToast();
+  let user = useSelector(userSelector);
   const dispatch = useDispatch();
+  useEffect(() => {
+    if (!user) user = getUserLocal();
+    getCurrUserReq()
+      .then((res) => {
+        setUserLocal(res);
+        dispatch(setUser(res));
+      })
+      .catch((err) => {
+        toast(showErrorRegOpts(err.response.data.message));
+      });
+  }, []);
   return (
     <>
       <Stack
@@ -22,7 +40,7 @@ export default function Layout({ children }) {
         <Stack direction="row" gap={3}>
           {user ? (
             <>
-              <Link to={`/users/${1}`}>
+              <Link to={`/users/${user.id}`}>
                 <Button color="#242424" colorScheme="green">
                   {user.name} profile
                 </Button>
@@ -43,7 +61,6 @@ export default function Layout({ children }) {
           )}
         </Stack>
       </Stack>
-
       <Outlet />
     </>
   );
