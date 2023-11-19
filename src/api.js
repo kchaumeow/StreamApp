@@ -13,9 +13,6 @@ export async function registerReq(name, email, password) {
     .then(function (response) {
       return response.data;
     })
-    .catch(function (error) {
-      console.log(error);
-    });
 }
 
 export async function loginReq(email, password) {
@@ -27,7 +24,4 @@ export async function loginReq(email, password) {
     .then(function (response) {
       return response.data;
     })
-    .catch(function (error) {
-      console.log(error);
-    });
 }

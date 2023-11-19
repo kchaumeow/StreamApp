@@ -12,11 +12,13 @@ import {
   Stack,
   InputGroup,
   InputRightElement,
+  useToast,
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { registerReq } from "../api";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
+import { showErrorRegOpts, showSuccessLogOpts } from "../utils/Toasts";
 
 async function registerUser(name, email, pass) {
   return await registerReq(name, email, pass);
@@ -31,6 +33,8 @@ export default function DrawerRegister() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const toast = useToast();
+
   return (
     <>
       <Button
@@ -58,8 +62,15 @@ export default function DrawerRegister() {
               id="my-form"
               onSubmit={async (e) => {
                 e.preventDefault();
-                const user = await registerUser(name, email, pass);
+                let user;
+                try {
+                  user = await registerUser(name, email, pass);
+                } catch (err) {
+                  toast(showErrorRegOpts(err.response.data.message));
+                  return;
+                }
                 dispatch(setUser(user));
+                toast(showSuccessLogOpts);
               }}
             >
               <Stack gap={5}>

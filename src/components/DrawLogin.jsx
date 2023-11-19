@@ -12,11 +12,13 @@ import {
   Stack,
   InputRightElement,
   InputGroup,
+  useToast,
 } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { loginReq } from "../api";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
+import { showErrorLogOpts, showSuccessLogOpts } from "../utils/Toasts";
 
 async function loginUser(email, pass) {
   return await loginReq(email, pass);
@@ -30,6 +32,8 @@ export default function DrawerLogin() {
   const btnRef = useRef();
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const toast = useToast();
+
   return (
     <>
       <Button
@@ -57,8 +61,15 @@ export default function DrawerLogin() {
               id="my-form"
               onSubmit={async (e) => {
                 e.preventDefault();
-                const user = await loginUser(email, pass);
+                let user;
+                try {
+                  user = await loginUser(email, pass);
+                } catch {
+                  toast(showErrorLogOpts);
+                  return;
+                }
                 dispatch(setUser(user));
+                toast(showSuccessLogOpts);
               }}
             >
               <Stack gap={5}>
