@@ -8,23 +8,16 @@ import { setUser } from "../store/userSlice";
 import { useEffect } from "react";
 import { getUserLocal, setUserLocal } from "../utils/localStorage";
 import { getCurrUserReq } from "../api";
-import { useToast } from "@chakra-ui/react";
-import { showErrorRegOpts } from "../utils/Toasts";
 
 export default function Layout() {
-  const toast = useToast();
   let user = useSelector(userSelector);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!user) user = getUserLocal();
-    getCurrUserReq()
-      .then((res) => {
-        setUserLocal(res);
-        dispatch(setUser(res));
-      })
-      .catch((err) => {
-        toast(showErrorRegOpts(err.response.data.message));
-      });
+    getCurrUserReq().then((res) => {
+      setUserLocal(res);
+      dispatch(setUser(res));
+    });
   }, []);
   return (
     <>

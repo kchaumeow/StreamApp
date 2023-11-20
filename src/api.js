@@ -4,6 +4,7 @@ const instance = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
   withCredentials: true,
 });
+
 export async function registerReq(name, email, password) {
   return instance
     .post("/signup", {

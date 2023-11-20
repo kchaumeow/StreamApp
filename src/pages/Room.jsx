@@ -1,4 +1,4 @@
-import { Card, CardBody, Box, CardFooter, Heading } from "@chakra-ui/react";
+import { Card, CardBody, Box, Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Chat from "../components/Chat";
 
