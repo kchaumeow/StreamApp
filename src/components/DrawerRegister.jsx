@@ -67,7 +67,7 @@ export default function DrawerRegister() {
                 try {
                   user = await registerUser(name, email, pass);
                 } catch (err) {
-                  toast(showErrorRegOpts(err.response.data.message));
+                  toast(showErrorRegOpts(err.response?.data?.message));
                   return;
                 }
                 dispatch(setUser(user));
