@@ -25,6 +25,7 @@ export default function Profile() {
       ) : (
         <Spinner
           thickness="4px"
+          className="grayBlock"
           speed="0.65s"
           emptyColor="gray.200"
           color="green.500"
