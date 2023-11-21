@@ -1,10 +1,15 @@
 import { Heading, Stack } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { getUserByIdReq } from "../api";
+import { useEffect } from "react";
+
 export default function Profile() {
   const id = useParams().id;
   console.log(id);
-  const user = getUserByIdReq(id);
+  let user;
+  useEffect(() => {
+    getUserByIdReq(id).then((res) => (user = res));
+  }, []);
   console.log(user);
   return (
     <Stack direction="column" gap={2} placeItems="center" className="grayBlock">
