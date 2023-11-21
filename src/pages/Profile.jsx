@@ -4,13 +4,8 @@ import { getUserByIdReq } from "../api";
 export default function Profile() {
   const id = useParams().id;
   console.log(id);
-  let user = null;
-  try {
-    getUserByIdReq(id).then((res) => (user = res));
-    console.log(user);
-  } catch (err) {
-    console.log(err);
-  }
+  const user = getUserByIdReq(id).then((res) => res);
+  console.log(user);
   return (
     <Stack direction="column" gap={2} placeItems="center" className="grayBlock">
       <Heading className="grayBlock">{user.name}</Heading>
