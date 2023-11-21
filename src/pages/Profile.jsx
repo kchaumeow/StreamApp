@@ -6,7 +6,7 @@ export default function Profile() {
   console.log(id);
   let user = null;
   try {
-    getUserByIdReq(id).then((res) => (user = res));
+    getUserByIdReq(id).then((res) => console.log(res));
     console.log(user);
   } catch (err) {
     console.log(err);
