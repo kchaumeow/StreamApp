@@ -1,8 +1,8 @@
 import { Heading, Stack } from "@chakra-ui/react";
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 export default function Profile() {
-  const id = useParams();
+  const id = useParams().id;
+  console.log(id);
   let user = null;
   try {
     user = getUserByIdReq(id).then((res) => res);
