@@ -1,5 +1,6 @@
 import { Heading, Stack } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import { getUserByIdReq } from "../api";
 export default function Profile() {
   const id = useParams().id;
   console.log(id);
