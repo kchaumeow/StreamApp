@@ -15,7 +15,6 @@ export default function Profile() {
       direction="column"
       gap={2}
       placeItems="center"
-      placeContent="center"
       className="grayBlock"
     >
       {user ? (
@@ -28,7 +27,6 @@ export default function Profile() {
           thickness="4px"
           placeContent="center"
           speed="0.65s"
-          emptyColor="gray.200"
           color="green.500"
           size="xl"
         />
