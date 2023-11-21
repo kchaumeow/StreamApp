@@ -40,9 +40,10 @@ export default function DrawerRegister() {
     <>
       <Button
         ref={btnRef}
-        colorScheme="green"
-        textColor="black"
         onClick={onOpen}
+        colorScheme="green"
+        color="#242424"
+        bgGradient="linear(to-r, green.400, green.500, green.600)"
       >
         Register
       </Button>

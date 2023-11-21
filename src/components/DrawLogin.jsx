@@ -115,10 +115,11 @@ export default function DrawerLogin() {
               Cancel
             </Button>
             <Button
-              colorScheme="green"
-              textColor="black"
               form="my-form"
               type="submit"
+              colorScheme="green"
+              color="#242424"
+              bgGradient="linear(to-r, green.400, green.500, green.600)"
             >
               Login
             </Button>
