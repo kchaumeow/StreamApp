@@ -13,9 +13,18 @@ export default function Profile() {
   }, []);
   console.log(user);
   return (
-    <Stack direction="column" gap={2} placeItems="center" className="grayBlock">
-      <Heading className="grayBlock">{user.name}</Heading>
-      <Heading className="grayBlock">{user.email}</Heading>
-    </Stack>
+    <>
+      {user && (
+        <Stack
+          direction="column"
+          gap={2}
+          placeItems="center"
+          className="grayBlock"
+        >
+          <Heading className="grayBlock">{user.name}</Heading>
+          <Heading className="grayBlock">{user.email}</Heading>
+        </Stack>
+      )}
+    </>
   );
 }
