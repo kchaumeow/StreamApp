@@ -6,6 +6,7 @@ export default function Profile() {
   useEffect(() => {
     try {
       user = getUserByIdReq().then((res) => res);
+      console.log(user);
     } catch (err) {
       console.log(err);
     }
