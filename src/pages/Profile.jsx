@@ -11,27 +11,28 @@ export default function Profile() {
     getUserByIdReq(id).then((res) => setUser(res));
   }, []);
   return (
-    <>
+    <Stack
+      direction="column"
+      gap={2}
+      placeItems="center"
+      placeContent="center"
+      className="grayBlock"
+    >
       {user ? (
-        <Stack
-          direction="column"
-          gap={2}
-          placeItems="center"
-          className="grayBlock"
-        >
+        <>
           <Heading className="grayBlock">{user.name}</Heading>
           <Heading className="grayBlock">{user.email}</Heading>
-        </Stack>
+        </>
       ) : (
         <Spinner
           thickness="4px"
-          className="grayBlock"
+          placeContent="center"
           speed="0.65s"
           emptyColor="gray.200"
           color="green.500"
           size="xl"
         />
       )}
-    </>
+    </Stack>
   );
 }
