@@ -1,8 +1,15 @@
 import { Heading, Stack } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
-import { userSelector } from "../store/selectors";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 export default function Profile() {
-  const user = useSelector(userSelector);
+  let user = null;
+  useEffect(() => {
+    try {
+      user = getUserByIdReq().then((res) => res);
+    } catch (err) {
+      console.log(err);
+    }
+  });
   return (
     <Stack direction="column" gap={2} placeItems="center" className="grayBlock">
       <Heading className="grayBlock">{user.name}</Heading>

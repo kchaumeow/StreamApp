@@ -33,3 +33,9 @@ export async function getCurrUserReq() {
     return response.data;
   });
 }
+
+export async function getUserByIdReq() {
+  return instance.get("/user/:id").then(function (response) {
+    return response.data;
+  });
+}
