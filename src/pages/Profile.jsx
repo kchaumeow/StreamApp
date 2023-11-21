@@ -2,6 +2,7 @@ import { Heading, Stack } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 export default function Profile() {
+  const id = useParams();
   let user = null;
   useEffect(() => {
     try {
