@@ -1,4 +1,4 @@
-import { Heading, Stack } from "@chakra-ui/react";
+import { Heading, Spinner, Stack } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { getUserByIdReq } from "../api";
 import { useEffect } from "react";
