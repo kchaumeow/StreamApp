@@ -11,7 +11,7 @@ export default function Profile() {
     } catch (err) {
       console.log(err);
     }
-  });
+  }, []);
   return (
     <Stack direction="column" gap={2} placeItems="center" className="grayBlock">
       <Heading className="grayBlock">{user.name}</Heading>
