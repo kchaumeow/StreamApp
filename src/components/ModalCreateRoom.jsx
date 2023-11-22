@@ -16,9 +16,10 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { createRoom } from "../api";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../store/selectors";
 import { showErrorLogOpts, showSuccessLogOpts } from "../utils/Toasts";
+import { addRoom } from "../store/roomSlice";
 
 export default function ModalCreateRoom() {
   const user = useSelector(userSelector);
@@ -29,6 +30,7 @@ export default function ModalCreateRoom() {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const toast = useToast();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -54,6 +56,7 @@ export default function ModalCreateRoom() {
                   toast(showErrorLogOpts);
                   return;
                 }
+                dispatch(addRoom(room));
                 toast(showSuccessLogOpts);
               }}
             >
