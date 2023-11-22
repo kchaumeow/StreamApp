@@ -22,7 +22,7 @@ export default function Room() {
           pl={3}
           pr={3}
         >
-          Room {id}
+          {id}
         </Heading>
         <CardBody className="blackBlock">
           <Chat />
