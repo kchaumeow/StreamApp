@@ -4,8 +4,8 @@ import ModalCreateRoom from "./ModalCreateRoom";
 
 export default function RoomsStack({ rooms }) {
   return (
-    <Stack className="grayBlock" placeContent="center">
-      <Stack direction="row" flexWrap="wrap" w="70$">
+    <Stack className="grayBlock" placeItems="center">
+      <Stack direction="row" flexWrap="wrap" w="70%" placeItems="center">
         {rooms.map((room) => {
           return <RoomCard key={room.id} id={room.name} desc={room.desc} />;
         })}

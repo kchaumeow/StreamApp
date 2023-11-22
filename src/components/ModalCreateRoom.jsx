@@ -111,6 +111,7 @@ export default function ModalCreateRoom() {
               onClick={() => {
                 onClose();
               }}
+              color="#242424"
               colorScheme="red"
               mr={3}
             >
