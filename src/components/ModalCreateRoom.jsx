@@ -52,7 +52,8 @@ export default function ModalCreateRoom() {
                 let room;
                 try {
                   room = await createRoom(name, private_room, pass, user.id);
-                  console.log(room);
+                  setPrivate(false);
+                  onClose();
                 } catch {
                   toast(showErrorLogOpts);
                   return;
@@ -61,7 +62,7 @@ export default function ModalCreateRoom() {
                 toast(showSuccessLogOpts);
               }}
             >
-              <Stack gap={5}>
+              <Stack gap={5} className="blackBlock">
                 <Input
                   placeholder="Name of room"
                   type="text"
