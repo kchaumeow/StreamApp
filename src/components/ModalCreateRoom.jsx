@@ -111,7 +111,6 @@ export default function ModalCreateRoom() {
               onClick={() => {
                 onClose();
               }}
-              variant="outline"
               colorScheme="red"
               mr={3}
             >
