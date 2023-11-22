@@ -112,7 +112,7 @@ export default function ModalCreateRoom() {
                 onClose();
               }}
               variant="outline"
-              bgColor="red"
+              colorScheme="red"
               mr={3}
             >
               Close
