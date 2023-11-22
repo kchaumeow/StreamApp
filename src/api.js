@@ -46,8 +46,15 @@ export async function getUserRooms(id) {
   });
 }
 
-export async function createRoom(room) {
-  return instance.post("/rooms", room).then(function (response) {
-    return response.data;
-  });
+export async function createRoom(name, private_room, pass, owner_id) {
+  return instance
+    .post("/rooms", {
+      name: name,
+      private: private_room,
+      password: pass,
+      owner_id: owner_id,
+    })
+    .then(function (response) {
+      return response.data;
+    });
 }
