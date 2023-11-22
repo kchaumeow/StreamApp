@@ -20,10 +20,9 @@ export default function Layout() {
     });
   }, []);
   return (
-    <>
+    <Stack className="grayBlock" p={10}>
       <Stack
         direction="row"
-        className="grayBlock"
         justifyContent="space-between"
         p={5}
       >
@@ -59,6 +58,6 @@ export default function Layout() {
         </Stack>
       </Stack>
       <Outlet />
-    </>
+    </Stack>
   );
 }
