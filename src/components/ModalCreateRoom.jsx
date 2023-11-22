@@ -34,7 +34,14 @@ export default function ModalCreateRoom() {
 
   return (
     <>
-      <Button onClick={onOpen}>Create new room</Button>
+      <Button
+        onClick={onOpen}
+        size="lg"
+        bgGradient="linear(to-r, green.400, green.500, green.600)"
+        color="#242424"
+      >
+        Create new room
+      </Button>
       <Modal
         blockScrollOnMount={false}
         isOpen={isOpen}
@@ -46,7 +53,7 @@ export default function ModalCreateRoom() {
       >
         <ModalContent>
           <ModalHeader className="blackBlock">Create your room</ModalHeader>
-          <ModalCloseButton bgColor="green" />
+          <ModalCloseButton bgGradient="linear(to-r, green.400, green.500, green.600)" />
           <ModalBody className="blackBlock">
             <form
               id="my-form"
