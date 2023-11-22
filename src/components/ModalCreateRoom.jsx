@@ -62,7 +62,6 @@ export default function ModalCreateRoom() {
                 let room;
                 try {
                   room = await createRoom(name, private_room, pass, user.id);
-                  setPrivate(false);
                   onClose();
                   dispatch(addRoom(room));
                   toast(showSuccessLogOpts);
@@ -111,10 +110,10 @@ export default function ModalCreateRoom() {
               colorScheme="green"
               onClick={() => {
                 onClose();
-                setPrivate(false);
               }}
               variant="outline"
               color="#242424"
+              mr={3}
             >
               Close
             </Button>
