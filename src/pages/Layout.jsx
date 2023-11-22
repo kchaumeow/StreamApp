@@ -53,7 +53,9 @@ export default function Layout() {
           )}
         </Stack>
       </Stack>
-      <Outlet />
+      <Stack gap={5} className="blackBlock" h="100%">
+        <Outlet />
+      </Stack>
     </Stack>
   );
 }

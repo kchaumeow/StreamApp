@@ -121,6 +121,7 @@ export default function ModalCreateRoom() {
               form="my-form"
               type="submit"
               color="#242424"
+              colorScheme="green"
               bgGradient="linear(to-r, green.400, green.500, green.600)"
             >
               Create
