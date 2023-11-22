@@ -21,7 +21,7 @@ export default function Layout() {
   }, []);
   return (
     <Stack className="grayBlock" minHeight="100vh">
-      <Stack direction="row" p={5}>
+      <Stack direction="row" p={5} justifyContent="space-between">
         <Link to="/">
           <Heading className="grayBlock">Stream audio</Heading>
         </Link>
@@ -53,7 +53,7 @@ export default function Layout() {
           )}
         </Stack>
       </Stack>
-      <Stack h="80%" placeContent="center">
+      <Stack h="50rem" placeContent="center">
         <Outlet />
       </Stack>
     </Stack>
