@@ -20,12 +20,7 @@ export default function Layout() {
     });
   }, []);
   return (
-    <Stack
-      className="grayBlock"
-      h="100vh"
-      direction="column"
-      justifyItems="center"
-    >
+    <Stack className="grayBlock" h="100vh" gap={10}>
       <Stack direction="row" justifyContent="space-between" p={5}>
         <Link to="/">
           <Heading className="grayBlock">Stream audio</Heading>
