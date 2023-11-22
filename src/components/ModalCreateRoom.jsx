@@ -42,9 +42,9 @@ export default function ModalCreateRoom() {
         className="grayBlock"
       >
         <ModalContent>
-          <ModalHeader className="blackBlock">Create your room</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
+          <ModalHeader>Create your room</ModalHeader>
+          <ModalCloseButton colorScheme="green" />
+          <ModalBody className="grayBlock">
             <form
               id="my-form"
               onSubmit={async (e) => {
@@ -54,12 +54,11 @@ export default function ModalCreateRoom() {
                   room = await createRoom(name, private_room, pass, user.id);
                   setPrivate(false);
                   onClose();
+                  dispatch(addRoom(room));
+                  toast(showSuccessLogOpts);
                 } catch {
                   toast(showErrorLogOpts);
-                  return;
                 }
-                dispatch(addRoom(room));
-                toast(showSuccessLogOpts);
               }}
             >
               <Stack gap={5} className="blackBlock">
@@ -97,8 +96,14 @@ export default function ModalCreateRoom() {
               </Stack>
             </form>
           </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <ModalFooter className="grayBlock">
+            <Button
+              colorScheme="green"
+              mr={3}
+              onClick={onClose}
+              variant="outline"
+              color="#242424"
+            >
               Close
             </Button>
             <Button
