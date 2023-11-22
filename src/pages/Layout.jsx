@@ -53,7 +53,7 @@ export default function Layout() {
           )}
         </Stack>
       </Stack>
-      <Stack minHeight="100vh">
+      <Stack minHeight="100vh" placeContent="center">
         <Outlet />
       </Stack>
     </Stack>
