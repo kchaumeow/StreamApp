@@ -20,7 +20,7 @@ export default function Layout() {
     });
   }, []);
   return (
-    <VStack className="grayBlock" justifyItems="center">
+    <Stack className="grayBlock">
       <Stack direction="row" justifyContent="space-between" p={5}>
         <Link to="/">
           <Heading className="grayBlock">Stream audio</Heading>
@@ -54,6 +54,6 @@ export default function Layout() {
         </Stack>
       </Stack>
       <Outlet />
-    </VStack>
+    </Stack>
   );
 }
