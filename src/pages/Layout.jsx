@@ -1,4 +1,4 @@
-import { Button, Heading, Stack } from "@chakra-ui/react";
+import { Button, Heading, Stack, VStack } from "@chakra-ui/react";
 import DrawerRegister from "../components/DrawerRegister";
 import { Link, Outlet } from "react-router-dom";
 import DrawerLogin from "../components/DrawLogin";
@@ -20,7 +20,7 @@ export default function Layout() {
     });
   }, []);
   return (
-    <Stack className="grayBlock" spacing={40}>
+    <VStack className="grayBlock" align="center">
       <Stack direction="row" justifyContent="space-between" p={5}>
         <Link to="/">
           <Heading className="grayBlock">Stream audio</Heading>
@@ -54,6 +54,6 @@ export default function Layout() {
         </Stack>
       </Stack>
       <Outlet />
-    </Stack>
+    </VStack>
   );
 }
