@@ -107,12 +107,11 @@ export default function ModalCreateRoom() {
           </ModalBody>
           <ModalFooter className="blackBlock">
             <Button
-              colorScheme="green"
               onClick={() => {
                 onClose();
               }}
               variant="outline"
-              color="#242424"
+              bgColor="green"
               mr={3}
             >
               Close
@@ -120,7 +119,6 @@ export default function ModalCreateRoom() {
             <Button
               form="my-form"
               type="submit"
-              colorScheme="green"
               color="#242424"
               bgGradient="linear(to-r, green.400, green.500, green.600)"
             >

@@ -5,6 +5,7 @@ import ModalCreateRoom from "./ModalCreateRoom";
 export default function RoomsStack({ rooms }) {
   return (
     <Stack
+      w="70%"
       direction="row"
       flexWrap="wrap"
       className="grayBlock"
