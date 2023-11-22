@@ -10,7 +10,6 @@ export default function RoomCard({ id, desc }) {
         borderColor="#55bd79"
         overflow="hidden"
         borderRadius="lg"
-        p={4}
       >
         <Heading
           size="md"

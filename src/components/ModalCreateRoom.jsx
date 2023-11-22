@@ -37,8 +37,9 @@ export default function ModalCreateRoom() {
       <Button
         onClick={onOpen}
         size="lg"
-        bgGradient="linear(to-r, green.400, green.500, green.600)"
+        colorScheme="green"
         color="#242424"
+        bgGradient="linear(to-r, green.400, green.500, green.600)"
       >
         Create new room
       </Button>
@@ -111,7 +112,7 @@ export default function ModalCreateRoom() {
                 onClose();
               }}
               variant="outline"
-              bgColor="green"
+              bgColor="red"
               mr={3}
             >
               Close
