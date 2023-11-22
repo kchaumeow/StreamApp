@@ -1,5 +1,6 @@
 import { Stack } from "@chakra-ui/react";
 import RoomCard from "./RoomCard";
+import ModalCreateRoom from "./ModalCreateRoom";
 
 export default function RoomsStack({ rooms }) {
   return (
@@ -12,6 +13,7 @@ export default function RoomsStack({ rooms }) {
       {rooms.map((room) => {
         return <RoomCard key={room.id} id={room.id} desc={room.desc} />;
       })}
+      <ModalCreateRoom />
     </Stack>
   );
 }

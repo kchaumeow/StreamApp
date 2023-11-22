@@ -1,14 +1,14 @@
+import { useEffect, useState } from "react";
 import RoomsStack from "../components/RoomsStack";
-const rooms = [
-  {
-    id: 1,
-    desc: "Listen to the greatest singer Marina and the diamonds with friends right now!",
-  },
-  {
-    id: 2,
-    desc: "Listen to the coolest song Fahrasattel with friends sein right now!",
-  },
-];
+import { getUserRooms } from "../api";
+import { useSelector } from "react-redux";
+import { userSelector } from "../store/selectors";
+
 export default function Home() {
+  const user = useSelector(userSelector);
+  const [rooms, setRooms] = useState([]);
+  useEffect(() => {
+    if (user) setRooms(getUserRooms(user.id).then((res) => res));
+  }, []);
   return <RoomsStack rooms={rooms} />;
 }

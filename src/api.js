@@ -39,3 +39,15 @@ export async function getUserByIdReq(id) {
     return response.data;
   });
 }
+
+export async function getUserRooms(id) {
+  return instance.get(`/users/${id}/rooms`).then(function (response) {
+    return response.data;
+  });
+}
+
+export async function createRoom(room) {
+  return instance.post("/rooms", room).then(function (response) {
+    return response.data;
+  });
+}
