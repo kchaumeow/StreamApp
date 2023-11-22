@@ -20,8 +20,8 @@ export default function Layout() {
     });
   }, []);
   return (
-    <Stack className="grayBlock" minHeight="100vh" placeContent="space-evenly">
-      <Stack direction="row" justifyContent="space-between" p={5}>
+    <Stack className="grayBlock" minHeight="100vh">
+      <Stack direction="row" p={5}>
         <Link to="/">
           <Heading className="grayBlock">Stream audio</Heading>
         </Link>
@@ -53,7 +53,9 @@ export default function Layout() {
           )}
         </Stack>
       </Stack>
-      <Outlet />
+      <Stack h="80%" placeContent="center">
+        <Outlet />
+      </Stack>
     </Stack>
   );
 }
