@@ -39,12 +39,12 @@ export default function ModalCreateRoom() {
         blockScrollOnMount={false}
         isOpen={isOpen}
         onClose={onClose}
-        className="grayBlock"
+        className="blackBlock"
       >
         <ModalContent>
-          <ModalHeader>Create your room</ModalHeader>
+          <ModalHeader className="blackBlock">Create your room</ModalHeader>
           <ModalCloseButton colorScheme="green" />
-          <ModalBody className="grayBlock">
+          <ModalBody className="blackBlock">
             <form
               id="my-form"
               onSubmit={async (e) => {
@@ -96,7 +96,7 @@ export default function ModalCreateRoom() {
               </Stack>
             </form>
           </ModalBody>
-          <ModalFooter className="grayBlock">
+          <ModalFooter className="blackBlock">
             <Button
               colorScheme="green"
               mr={3}
