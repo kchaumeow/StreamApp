@@ -11,7 +11,7 @@ export default function RoomsStack({ rooms }) {
       justifyContent="center"
     >
       {rooms.map((room) => {
-        return <RoomCard key={room.id} id={room.id} desc={room.desc} />;
+        return <RoomCard key={room.id} id={room.name} desc={room.desc} />;
       })}
       <ModalCreateRoom />
     </Stack>

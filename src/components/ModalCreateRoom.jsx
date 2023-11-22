@@ -52,6 +52,7 @@ export default function ModalCreateRoom() {
                 let room;
                 try {
                   room = await createRoom(name, private_room, pass, user.id);
+                  console.log(room);
                 } catch {
                   toast(showErrorLogOpts);
                   return;
@@ -68,10 +69,7 @@ export default function ModalCreateRoom() {
                   onChange={(e) => setName(e.target.value)}
                   borderColor="#55bd79"
                 />
-                <Checkbox
-                  isRequired
-                  onChange={(e) => setPrivate(e.target.checked)}
-                >
+                <Checkbox onChange={(e) => setPrivate(e.target.checked)}>
                   Private room
                 </Checkbox>
                 {private_room && (
