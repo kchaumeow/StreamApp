@@ -38,12 +38,15 @@ export default function ModalCreateRoom() {
       <Modal
         blockScrollOnMount={false}
         isOpen={isOpen}
-        onClose={onClose}
+        onClose={() => {
+          onClose();
+          setPrivate(false);
+        }}
         className="blackBlock"
       >
         <ModalContent>
           <ModalHeader className="blackBlock">Create your room</ModalHeader>
-          <ModalCloseButton colorScheme="green" />
+          <ModalCloseButton bgColor="green" />
           <ModalBody className="blackBlock">
             <form
               id="my-form"
@@ -99,8 +102,10 @@ export default function ModalCreateRoom() {
           <ModalFooter className="blackBlock">
             <Button
               colorScheme="green"
-              mr={3}
-              onClick={onClose}
+              onClick={() => {
+                onClose();
+                setPrivate(false);
+              }}
               variant="outline"
               color="#242424"
             >
