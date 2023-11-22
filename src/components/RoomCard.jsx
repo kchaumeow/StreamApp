@@ -19,11 +19,8 @@ export default function RoomCard({ id, desc }) {
           pl={3}
           pr={3}
         >
-          Room {id}
+          {id}
         </Heading>
-        <Text className="blackBlock" color="gray" p={3}>
-          {desc}
-        </Text>
       </Card>
     </Link>
   );
