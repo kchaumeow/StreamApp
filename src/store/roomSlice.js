@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { createRoom, getUserRooms } from "../api";
 
 export const setRooms = createAsyncThunk("rooms/setRooms", async (userId) => {
