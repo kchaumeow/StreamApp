@@ -1,11 +1,8 @@
 import { Stack } from "@chakra-ui/react";
 import RoomCard from "./RoomCard";
 import ModalCreateRoom from "./ModalCreateRoom";
-import { useSelector } from "react-redux";
-import { userSelector } from "../store/selectors";
 
-export default function RoomsStack() {
-  const user = useSelector(userSelector);
+export default function RoomsStack({room, user}) {
   return (
     <Stack className="grayBlock" placeItems="center" spacing={15}>
       <Stack
