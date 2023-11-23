@@ -60,5 +60,5 @@ export async function createRoom(name, private_room, pass, owner_id) {
 }
 
 export async function logoutReq() {
-  await instance.get(`/logout`);
+  await instance.post(`/logout`);
 }

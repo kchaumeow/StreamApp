@@ -7,11 +7,10 @@ import { setRooms } from "../store/roomSlice";
 export default function Home() {
   const dispatch = useDispatch();
   const user = useSelector(userSelector);
-  let rooms = [];
+  let rooms = useSelector(roomsSelector);
   useEffect(() => {
     if (user) {
       dispatch(setRooms(user.id));
-      rooms = useSelector(roomsSelector);
     }
   }, [user]);
   return <RoomsStack rooms={rooms} />;
