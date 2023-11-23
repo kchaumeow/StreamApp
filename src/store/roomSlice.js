@@ -24,20 +24,23 @@ const roomSlice = createSlice({
   reducers: {},
 
   extraReducers: (builder) => {
-    builder.addCase(setRooms.fulfilled, (state) => {
+    builder.addCase(setRooms.fulfilled, (state, action) => {
       state.loading = false;
-      state.rooms = payload;
+      state.rooms = action.payload;
     });
-    builder.addCase(addRoom.fulfilled, (state) => {
+    builder.addCase(addRoom.fulfilled, (state, action) => {
       state.loading = false;
-      state.rooms.push(payload);
-    });
-    builder.addMatcher(isAnyOf(setRooms.pending, addRoom.pending), (state) => {
-      state.loading = true;
+      state.rooms.push(action.payload);
     });
     builder.addMatcher(
+      isAnyOf(setRooms.pending, addRoom.pending),
+      (state, action) => {
+        state.loading = true;
+      }
+    );
+    builder.addMatcher(
       isAnyOf(setRooms.rejected, addRoom.rejected),
-      (state) => {
+      (state, action) => {
         state.loading = false;
       }
     );
