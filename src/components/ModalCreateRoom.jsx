@@ -69,11 +69,14 @@ export default function ModalCreateRoom() {
                 onClose();
                 setPrivate(false);
                 try {
-                  dispatch(addRoom(room));
+                  dispatch(
+                    addRoom(room).catch(() => {
+                      throw new Error();
+                    })
+                  );
                   toast(showSuccessRoomCreate);
                 } catch {
                   toast(showErrorRoomName);
-                  return;
                 }
               }}
             >
