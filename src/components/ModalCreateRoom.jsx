@@ -11,6 +11,7 @@ import {
   ModalFooter,
   ModalHeader,
   Stack,
+  typography,
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
@@ -68,10 +69,12 @@ export default function ModalCreateRoom() {
                 };
                 onClose();
                 setPrivate(false);
-                dispatch(addRoom(room));
-                toast(showSuccessRoomCreate);
-                toast(showErrorRoomName);
-                
+                try {
+                  dispatch(addRoom(room));
+                  toast(showSuccessRoomCreate);
+                } catch {
+                  toast(showErrorRoomName);
+                }
               }}
             >
               <Stack gap={5} className="blackBlock">
