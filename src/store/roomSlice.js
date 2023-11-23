@@ -16,7 +16,7 @@ export const addRoom = createAsyncThunk("rooms/addRoom", async (room) => {
     );
     return rooms;
   } catch (err) {
-    throw err;
+    return err;
   }
 });
 
