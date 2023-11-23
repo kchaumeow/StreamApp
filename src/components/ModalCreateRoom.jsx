@@ -64,6 +64,7 @@ export default function ModalCreateRoom() {
                 try {
                   room = await createRoom(name, private_room, pass, user.id);
                   onClose();
+                  setPrivate(false);
                   dispatch(addRoom(room));
                   toast(showSuccessRoomCreate);
                 } catch {
