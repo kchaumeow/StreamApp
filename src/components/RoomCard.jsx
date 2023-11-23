@@ -1,4 +1,4 @@
-import { Card, Text, Heading, Image } from "@chakra-ui/react";
+import { Card, Heading, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export default function RoomCard({ id }) {
@@ -16,7 +16,7 @@ export default function RoomCard({ id }) {
           {id}
         </Heading>
         <Image
-          src={`https://cataas.com/cat/says/${id}?fontSize=25&type=square&height=250&width=250&fontColor=#55bd79`}
+          src={`https://cataas.com/cat/says/${id}?fontSize=25&type=square&height=250&width=250&fontColor=#EE4B2B`}
           width={250}
           height={250}
           objectFit="cover"
