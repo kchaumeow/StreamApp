@@ -11,9 +11,6 @@ export default function Home() {
   useEffect(() => {
     if (user) {
       dispatch(setRooms(user.id));
-      setRoomsArr(roomsRedux);
-    } else {
-      setRoomsArr([]);
     }
   }, [user]);
   return <RoomsStack />;
