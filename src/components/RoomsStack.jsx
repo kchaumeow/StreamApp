@@ -7,7 +7,7 @@ import { userSelector } from "../store/selectors";
 export default function RoomsStack({ rooms }) {
   const user = useSelector(userSelector);
   return (
-    <Stack className="grayBlock" placeItems="center" gap={3}>
+    <Stack className="grayBlock" placeItems="center" gap={15}>
       <Stack
         direction="row"
         flexWrap="wrap"
