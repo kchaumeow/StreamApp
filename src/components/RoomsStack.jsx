@@ -10,7 +10,7 @@ export default function RoomsStack({ rooms }) {
         flexWrap="wrap"
         w="70%"
         alignItems="center"
-        justifyContent="space-between"
+        gap={5}
       >
         {rooms.map((room) => {
           return <RoomCard key={room.id} id={room.name} desc={room.desc} />;
