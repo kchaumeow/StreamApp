@@ -11,13 +11,7 @@ export default function RoomsStack() {
     <Stack className="grayBlock" placeItems="center" spacing={15}>
       {user ? (
         <>
-          <Stack
-            direction="row"
-            flexWrap="wrap"
-            w="70%"
-            alignItems="center"
-            gap={5}
-          >
+          <Stack direction="row" flexWrap="wrap" w="80%" margin="auto" gap={5}>
             {rooms.map((room) => {
               return <RoomCard key={room.id} id={room.name} desc={room.desc} />;
             })}
