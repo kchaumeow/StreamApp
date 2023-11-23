@@ -41,7 +41,7 @@ export default function Layout() {
                 colorScheme="red"
                 color="#242424"
                 onClick={() => {
-                  logoutReq(user.id);
+                  logoutReq();
                   setUserLocal(null);
                   dispatch(setUser(null));
                 }}
