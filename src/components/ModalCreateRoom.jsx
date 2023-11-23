@@ -70,11 +70,11 @@ export default function ModalCreateRoom() {
                 setPrivate(false);
                 try {
                   dispatch(addRoom(room));
-                } catch (err) {
-                  if (err.status === 400) toast(showErrorRoomName);
+                  toast(showSuccessRoomCreate);
+                } catch {
+                  toast(showErrorRoomName);
                   return;
                 }
-                toast(showSuccessRoomCreate);
               }}
             >
               <Stack gap={5} className="blackBlock">
