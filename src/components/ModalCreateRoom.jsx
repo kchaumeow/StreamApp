@@ -34,7 +34,7 @@ export default function ModalCreateRoom() {
   return (
     <>
       <Button
-        mb={10}
+        mb={6}
         onClick={onOpen}
         size="lg"
         colorScheme="green"

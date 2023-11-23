@@ -18,7 +18,7 @@ export default function RoomsStack() {
               flexWrap="wrap"
               w="80%"
               gap={5}
-              justifyItems="center"
+              justifyContent="center"
             >
               {rooms.map((room) => {
                 return (
