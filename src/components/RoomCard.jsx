@@ -12,7 +12,7 @@ export default function RoomCard({ id }) {
         width={300}
         height={356}
       >
-        <Heading padding={3} className="grayBlock" height={56}>
+        <Heading padding={3} className="blackBlock" height={56}>
           {id}
         </Heading>
         <Image
