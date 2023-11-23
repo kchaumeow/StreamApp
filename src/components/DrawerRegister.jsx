@@ -67,13 +67,12 @@ export default function DrawerRegister() {
                 let user;
                 try {
                   user = await registerUser(name, email, pass);
+                  dispatch(setUser(user));
+                  setUserLocal(user);
+                  toast(showSuccessLogOpts);
                 } catch (err) {
                   toast(showErrorRegOpts(err.response?.data?.message));
-                  return;
                 }
-                dispatch(setUser(user));
-                setUserLocal(user);
-                toast(showSuccessLogOpts);
               }}
             >
               <Stack gap={5}>

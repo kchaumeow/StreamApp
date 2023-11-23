@@ -18,7 +18,7 @@ import { useState } from "react";
 import { createRoom } from "../api";
 import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../store/selectors";
-import { showErrorLogOpts, showSuccessLogOpts } from "../utils/Toasts";
+import { showErrorRoomName, showSuccessRoomCreate } from "../utils/Toasts";
 import { addRoom } from "../store/roomSlice";
 
 export default function ModalCreateRoom() {
@@ -66,9 +66,9 @@ export default function ModalCreateRoom() {
                   room = await createRoom(name, private_room, pass, user.id);
                   onClose();
                   dispatch(addRoom(room));
-                  toast(showSuccessLogOpts);
+                  toast(showSuccessRoomCreate);
                 } catch {
-                  toast(showErrorLogOpts);
+                  toast(showErrorRoomName);
                 }
               }}
             >

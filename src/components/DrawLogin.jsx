@@ -65,13 +65,12 @@ export default function DrawerLogin() {
                 let user;
                 try {
                   user = await loginUser(email, pass);
+                  dispatch(setUser(user));
+                  setUserLocal(user);
+                  toast(showSuccessLogOpts);
                 } catch {
                   toast(showErrorLogOpts);
-                  return;
                 }
-                dispatch(setUser(user));
-                setUserLocal(user);
-                toast(showSuccessLogOpts);
               }}
             >
               <Stack gap={5}>

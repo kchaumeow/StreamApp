@@ -26,3 +26,21 @@ export function showErrorRegOpts(desc) {
     position: "bottom-left",
   };
 }
+
+export const showErrorRoomName = {
+  title: "Error creating room",
+  description: "Room with this name already exists",
+  status: "error",
+  duration: 3000,
+  isClosable: true,
+  position: "bottom-left",
+};
+
+export const showSuccessRoomCreate = {
+  title: "Success",
+  description: "New room was created!",
+  status: "success",
+  duration: 3000,
+  isClosable: true,
+  position: "bottom-left",
+};
