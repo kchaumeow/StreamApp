@@ -9,10 +9,10 @@ export default function Home() {
   const user = useSelector(userSelector);
   let rooms = [];
   useEffect(() => {
-    if (user)
-      dispatch(setRooms(user.id)).then(
-        () => (rooms = useSelector(roomsSelector))
-      );
+    if (user) {
+      dispatch(setRooms(user.id));
+      rooms = useSelector(roomsSelector);
+    }
   }, [user]);
   return <RoomsStack rooms={rooms} />;
 }
