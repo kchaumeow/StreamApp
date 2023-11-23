@@ -19,7 +19,7 @@ export default function RoomCard({ id }) {
         <Image
           src={`https://cataas.com/cat/says/${id}?fontSize=25&type=square&height=200&width=250`}
           width={300}
-          height={250}
+          height={200}
           objectFit="cover"
           objectPosition="center"
         />
