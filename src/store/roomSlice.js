@@ -7,12 +7,17 @@ export const setRooms = createAsyncThunk("rooms/setRooms", async (userId) => {
 });
 
 export const addRoom = createAsyncThunk("rooms/addRoom", async (room) => {
-  return await createRoom(
-    room.name,
-    room.private,
-    room.password,
-    room.owner_id
-  );
+  try {
+    const rooms = await createRoom(
+      room.name,
+      room.private,
+      room.password,
+      room.owner_id
+    );
+    return rooms;
+  } catch (err) {
+    throw err;
+  }
 });
 
 const roomSlice = createSlice({

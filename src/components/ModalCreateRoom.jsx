@@ -60,21 +60,21 @@ export default function ModalCreateRoom() {
               id="my-form"
               onSubmit={async (e) => {
                 e.preventDefault();
-                let room;
+                const room = {
+                  name: name,
+                  private: private_room,
+                  password: pass,
+                  owner_id: user.id,
+                };
+                onClose();
+                setPrivate(false);
                 try {
-                  room = {
-                    name: name,
-                    private: private_room,
-                    password: pass,
-                    owner_id: user.id,
-                  };
-                  onClose();
-                  setPrivate(false);
                   dispatch(addRoom(room));
-                  toast(showSuccessRoomCreate);
-                } catch {
-                  toast(showErrorRoomName);
+                } catch (err) {
+                  if (err.status === 400) toast(showErrorRoomName);
+                  return;
                 }
+                toast(showSuccessRoomCreate);
               }}
             >
               <Stack gap={5} className="blackBlock">
