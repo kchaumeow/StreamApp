@@ -35,7 +35,7 @@ export default function RoomsStack() {
           >
             Unauthorised
           </Heading>
-          <Text fontSize="18px" color={"gray.500"} mt={6}>
+          <Text fontSize="18px" color={"gray.500"} mt={4}>
             Login or Register to continue
           </Text>
         </Box>
