@@ -7,15 +7,17 @@ export const setRooms = createAsyncThunk("rooms/setRooms", async (userId) => {
 });
 
 export const addRoom = createAsyncThunk("rooms/addRoom", async (room) => {
-  let room;
-  createRoom(room.name, room.private, room.password, room.owner_id)
-    .then((res) => {
-      room = res;
-    })
-    .catch((err) => {
-      throw err;
-    });
-  return room;
+  try {
+    const rooms = await createRoom(
+      room.name,
+      room.private,
+      room.password,
+      room.owner_id
+    );
+    return rooms;
+  } catch (err) {
+    throw err;
+  }
 });
 
 const roomSlice = createSlice({
@@ -23,7 +25,6 @@ const roomSlice = createSlice({
   initialState: {
     rooms: [],
     loading: false,
-    error: false,
   },
   reducers: {},
 
@@ -31,25 +32,21 @@ const roomSlice = createSlice({
     builder.addCase(setRooms.fulfilled, (state, action) => {
       state.loading = false;
       state.rooms = action.payload;
-      state.error = false;
     });
     builder.addCase(addRoom.fulfilled, (state, action) => {
       state.loading = false;
       state.rooms.push(action.payload);
-      state.error = false;
     });
     builder.addMatcher(
       isAnyOf(setRooms.pending, addRoom.pending),
       (state, action) => {
         state.loading = true;
-        state.error = false;
       }
     );
     builder.addMatcher(
       isAnyOf(setRooms.rejected, addRoom.rejected),
       (state, action) => {
         state.loading = false;
-        state.error = true;
       }
     );
   },
