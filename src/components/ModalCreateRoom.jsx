@@ -44,7 +44,7 @@ export default function ModalCreateRoom() {
         Create new room
       </Button>
       <Modal
-        h="40rem"
+        mt={20}
         blockScrollOnMount={false}
         isOpen={isOpen}
         onClose={() => {
@@ -76,7 +76,7 @@ export default function ModalCreateRoom() {
                 <Input
                   placeholder="Name of room"
                   type="text"
-                  required
+                  isRequired
                   onChange={(e) => setName(e.target.value)}
                   borderColor="#55bd79"
                 />
@@ -88,7 +88,7 @@ export default function ModalCreateRoom() {
                     <Input
                       placeholder="Room password"
                       type={show ? "text" : "password"}
-                      required
+                      isRequired={private_room}
                       onChange={(e) => setPass(e.target.value)}
                       borderColor="#55bd79"
                     />
