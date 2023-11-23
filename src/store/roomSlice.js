@@ -1,21 +1,47 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getUserRooms } from "../api";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createRoom, getUserRooms } from "../api";
+
+export const setRooms = createAsyncThunk("rooms/setRooms", async (userId) => {
+  const rooms = await getUserRooms(userId);
+  return rooms;
+});
+
+export const addRoom = createAsyncThunk("rooms/addRoom", async (room) => {
+  return await createRoom(room);
+});
+
 const roomSlice = createSlice({
   name: "roomSlice",
   initialState: {
     rooms: [],
+    loading: false,
   },
-  reducers: {
-    async setRooms(state, action) {
-      const rooms = await getUserRooms(action.id);
-      state.rooms = rooms;
+  reducers: {},
+
+  extraReducers: {
+    //setRooms
+    [setRooms.pending]: (state) => {
+      state.loading = true;
     },
-    addRoom(state, action) {
-      state.rooms.push(action.payload);
+    [setRooms.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.rooms = payload;
+    },
+    [setRooms.rejected]: (state) => {
+      state.loading = false;
+    },
+    //addRoom
+    [addRoom.pending]: (state) => {
+      state.loading = true;
+    },
+    [addRoom.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.rooms.push(payload);
+    },
+    [addRoom.rejected]: (state) => {
+      state.loading = false;
     },
   },
 });
-
-export const { setRooms, addRoom } = roomSlice.actions;
 
 export default roomSlice.reducer;

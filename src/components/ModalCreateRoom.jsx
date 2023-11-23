@@ -15,7 +15,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { createRoom } from "../api";
 import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../store/selectors";
 import { showErrorRoomName, showSuccessRoomCreate } from "../utils/Toasts";
@@ -62,7 +61,12 @@ export default function ModalCreateRoom() {
                 e.preventDefault();
                 let room;
                 try {
-                  room = await createRoom(name, private_room, pass, user.id);
+                  room = {
+                    name: name,
+                    private: private_room,
+                    password: pass,
+                    owner_id: user.id,
+                  };
                   onClose();
                   setPrivate(false);
                   dispatch(addRoom(room));
