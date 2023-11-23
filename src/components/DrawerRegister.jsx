@@ -44,6 +44,7 @@ export default function DrawerRegister() {
         colorScheme="green"
         color="#242424"
         bgGradient="linear(to-r, green.400, green.500, green.600)"
+        size="lg"
       >
         Register
       </Button>

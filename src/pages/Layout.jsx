@@ -34,6 +34,7 @@ export default function Layout() {
                   colorScheme="green"
                   color="#242424"
                   bgGradient="linear(to-r, green.400, green.500, green.600)"
+                  size="lg"
                 >
                   {user.name} profile
                 </Button>
@@ -46,6 +47,7 @@ export default function Layout() {
                   setUserLocal(null);
                   dispatch(setUser(null));
                 }}
+                size="lg"
               >
                 Logout
               </Button>

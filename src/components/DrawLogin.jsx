@@ -42,6 +42,7 @@ export default function DrawerLogin() {
         variant="outline"
         colorScheme="green"
         onClick={onOpen}
+        size="lg"
       >
         Login
       </Button>
