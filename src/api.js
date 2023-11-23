@@ -58,3 +58,7 @@ export async function createRoom(name, private_room, pass, owner_id) {
       return response.data;
     });
 }
+
+export async function logoutReq(id) {
+  await instance.post(`/accounts/${id}`);
+}

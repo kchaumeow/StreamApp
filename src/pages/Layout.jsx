@@ -7,7 +7,7 @@ import { userSelector } from "../store/selectors";
 import { setUser } from "../store/userSlice";
 import { useEffect } from "react";
 import { getUserLocal, setUserLocal } from "../utils/localStorage";
-import { getCurrUserReq } from "../api";
+import { getCurrUserReq, logoutReq } from "../api";
 
 export default function Layout() {
   let user = useSelector(userSelector);
@@ -40,7 +40,11 @@ export default function Layout() {
               <Button
                 colorScheme="red"
                 color="#242424"
-                onClick={() => dispatch(setUser(null))}
+                onClick={() => {
+                  logoutReq(user.id);
+                  setUserLocal(null);
+                  dispatch(setUser(null));
+                }}
               >
                 Logout
               </Button>
