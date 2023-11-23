@@ -45,7 +45,6 @@ export default function Layout() {
                   logoutReq();
                   setUserLocal(null);
                   dispatch(setUser(null));
-                  dispatch(deleteAllRooms());
                 }}
               >
                 Logout

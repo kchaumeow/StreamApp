@@ -17,5 +17,5 @@ export default function Home() {
       setRoomsArr([]);
     }
   }, [user]);
-  return <RoomsStack rooms={rooms} user={user}/>;
+  return <RoomsStack rooms={rooms} />;
 }

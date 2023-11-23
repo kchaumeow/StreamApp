@@ -21,11 +21,7 @@ const roomSlice = createSlice({
     rooms: [],
     loading: false,
   },
-  reducers: {
-    deleteAllRooms(state) {
-      state.rooms = [];
-    },
-  },
+  reducers: {},
 
   extraReducers: {
     //setRooms
@@ -53,7 +49,5 @@ const roomSlice = createSlice({
     },
   },
 });
-
-export const { deleteAllRooms } = roomSlice.actions;
 
 export default roomSlice.reducer;
