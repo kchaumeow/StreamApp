@@ -29,7 +29,7 @@ export default function RoomsStack() {
           </Stack>
         </>
       ) : (
-        <Box textAlign="center" py={10} px={6} className="grayBlock">
+        <Box textAlign="center" className="grayBlock">
           <Heading
             display="inline-block"
             as="h2"
