@@ -11,6 +11,7 @@ export default function RoomCard({ id }) {
         overflow="hidden"
         borderRadius="lg"
         width={250}
+        height={250}
       >
         <Heading padding={3} className="grayBlock">
           {id}
