@@ -11,9 +11,15 @@ export default function RoomCard({ id }) {
         overflow="hidden"
         borderRadius="lg"
       >
-        <Heading padding={3} className="grayBlock">{id}</Heading>
+        <Heading padding={3} className="grayBlock">
+          {id}
+        </Heading>
         <Image
-          src={`https://cataas.com/cat/says/${id}?fontSize=20&type=square&height=100&width=150`}
+          src={`https://cataas.com/cat/says/${id}?fontSize=25&type=square&height=100&width=100`}
+          width={100}
+          height={100}
+          objectFit="cover"
+          objectPosition="center"
         />
       </Card>
     </Link>
