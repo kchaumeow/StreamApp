@@ -7,7 +7,7 @@ export const setRooms = createAsyncThunk("rooms/setRooms", async (userId) => {
 });
 
 export const addRoom = createAsyncThunk("rooms/addRoom", async (room) => {
-  return await createRoom(room);
+  return await createRoom(...room);
 });
 
 const roomSlice = createSlice({
@@ -36,6 +36,7 @@ const roomSlice = createSlice({
     },
     [addRoom.fulfilled]: (state, { payload }) => {
       state.loading = false;
+      console.log(payload);
       state.rooms.push(payload);
     },
     [addRoom.rejected]: (state) => {
