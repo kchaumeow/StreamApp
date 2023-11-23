@@ -21,7 +21,9 @@ export default function RoomCard({ id, desc }) {
         >
           {id}
         </Heading>
-        <Image src={`https://cataas.com/cat/says/${id}?fontSize=16`} />
+        <Image
+          src={`https://cataas.com/cat/says/${id}?fontSize=20&type=square`}
+        />
       </Card>
     </Link>
   );
