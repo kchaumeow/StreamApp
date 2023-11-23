@@ -15,7 +15,7 @@ export const showSuccessLogOpts = {
   title: "Success",
   description: "You are logged in",
   status: "success",
-  basicToast,
+  ...basicToast,
 };
 
 export function showErrorRegOpts(desc) {
@@ -23,7 +23,7 @@ export function showErrorRegOpts(desc) {
     title: "Error creating account",
     description: desc,
     status: "error",
-    basicToast,
+    ...basicToast,
   };
 }
 
@@ -31,12 +31,12 @@ export const showErrorRoomName = {
   title: "Error creating room",
   description: "Room with this name already exists",
   status: "error",
-  basicToast,
+  ...basicToast,
 };
 
 export const showSuccessRoomCreate = {
   title: "Success",
   description: "New room was created!",
   status: "success",
-  basicToast,
+  ...basicToast,
 };
