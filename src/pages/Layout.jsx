@@ -8,7 +8,6 @@ import { setUser } from "../store/userSlice";
 import { useEffect } from "react";
 import { getUserLocal, setUserLocal } from "../utils/localStorage";
 import { getCurrUserReq, logoutReq } from "../api";
-import { setRooms } from "../store/roomSlice";
 
 export default function Layout() {
   let user = useSelector(userSelector);
@@ -21,7 +20,7 @@ export default function Layout() {
     });
   }, []);
   return (
-    <Stack className="grayBlock" minHeight="100vh">
+    <Stack className="grayBlock" flexGrow={1}>
       <Stack direction="row" p={5} justifyContent="space-between">
         <Link to="/">
           <Heading className="grayBlock">Stream audio</Heading>
@@ -60,7 +59,7 @@ export default function Layout() {
           )}
         </Stack>
       </Stack>
-      <Stack h="40rem" placeContent="center">
+      <Stack placeContent="center" flexGrow={1}>
         <Outlet />
       </Stack>
     </Stack>

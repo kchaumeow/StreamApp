@@ -21,3 +21,9 @@
   background-color: #2f3235;
   color: #55bd79;
 }
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
