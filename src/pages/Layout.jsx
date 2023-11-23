@@ -8,6 +8,7 @@ import { setUser } from "../store/userSlice";
 import { useEffect } from "react";
 import { getUserLocal, setUserLocal } from "../utils/localStorage";
 import { getCurrUserReq, logoutReq } from "../api";
+import { setRooms } from "../store/roomSlice";
 
 export default function Layout() {
   let user = useSelector(userSelector);
@@ -44,6 +45,7 @@ export default function Layout() {
                   logoutReq();
                   setUserLocal(null);
                   dispatch(setUser(null));
+                  dispatch(deleteAllRooms());
                 }}
               >
                 Logout
