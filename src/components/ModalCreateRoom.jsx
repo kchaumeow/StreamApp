@@ -44,7 +44,6 @@ export default function ModalCreateRoom() {
         Create new room
       </Button>
       <Modal
-        mt={20}
         blockScrollOnMount={false}
         isOpen={isOpen}
         onClose={() => {
