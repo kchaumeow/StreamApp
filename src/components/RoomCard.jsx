@@ -5,21 +5,20 @@ export default function RoomCard({ id }) {
   return (
     <Link to={`/rooms/${id}`}>
       <Card
-        maxW="sm"
         border="1px"
         borderColor="#55bd79"
         overflow="hidden"
         borderRadius="lg"
         width={300}
-        height={306}
+        height={356}
       >
         <Heading padding={3} className="grayBlock" height={56}>
           {id}
         </Heading>
         <Image
-          src={`https://cataas.com/cat/says/${id}?fontSize=25&type=square&height=200&width=250`}
+          src={`https://cataas.com/cat/says/${id}?fontSize=25&type=square&height=300&width=300`}
           width={300}
-          height={200}
+          height={300}
           objectFit="cover"
           objectPosition="center"
         />
