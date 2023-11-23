@@ -16,7 +16,7 @@ export default function RoomsStack() {
             <Stack
               direction="row"
               flexWrap="wrap"
-              w="80%"
+              w="95%"
               gap={5}
               justifyContent="center"
             >
