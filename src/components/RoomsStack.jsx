@@ -2,7 +2,7 @@ import { Stack } from "@chakra-ui/react";
 import RoomCard from "./RoomCard";
 import ModalCreateRoom from "./ModalCreateRoom";
 
-export default function RoomsStack({room, user}) {
+export default function RoomsStack({rooms, user}) {
   return (
     <Stack className="grayBlock" placeItems="center" spacing={15}>
       <Stack
