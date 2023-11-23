@@ -12,7 +12,7 @@ export default function RoomsStack() {
       {user ? (
         <>
           <ModalCreateRoom />
-          <Stack placeItems="center">
+          <Stack placeItems="center" mb={5}>
             <Stack
               direction="row"
               flexWrap="wrap"
