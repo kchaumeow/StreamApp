@@ -1,8 +1,10 @@
-import { Card, CardBody, Box, Heading } from "@chakra-ui/react";
+import { Card, CardBody, Box, Heading, Progress } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Chat from "../components/Chat";
 
 export default function Room() {
+  const [progress, setProgress] = useState(0);
+  setInterval(() => setProgress(progress + 1), 1000);
   const { id } = useParams();
   return (
     <Box className="grayBlock" display="flex" justifyContent="center">
@@ -24,6 +26,7 @@ export default function Room() {
         >
           {id}
         </Heading>
+        <Progress colorScheme="green" size="lg" value={progress} />
         <CardBody className="blackBlock">
           <Chat />
         </CardBody>
