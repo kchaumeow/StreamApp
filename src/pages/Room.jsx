@@ -7,7 +7,9 @@ import { getRoomById } from "../api";
 export default function Room() {
   const { id } = useParams().id;
   const [room, setRoom] = useState(null);
-  getRoomById(id).then((res) => setRoom(res));
+  useEffect(() => {
+    getRoomById(id).then((res) => setRoom(res));
+  }, []);
   return (
     <Box className="grayBlock" display="flex" justifyContent="center">
       {room && (
