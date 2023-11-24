@@ -1,6 +1,7 @@
 import { Card, CardBody, Box, Heading, Progress } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import Chat from "../components/Chat";
+import { useState } from "react";
 
 export default function Room() {
   const [progress, setProgress] = useState(0);
