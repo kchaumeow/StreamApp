@@ -1,7 +1,7 @@
 import { Card, Heading, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-export default function RoomCard({ id }) {
+export default function RoomCard({ id, name }) {
   return (
     <Link to={`/rooms/${id}`}>
       <Card
@@ -13,7 +13,7 @@ export default function RoomCard({ id }) {
         height={356}
       >
         <Heading padding={3} className="blackBlock" height={56}>
-          {id}
+          {name}
         </Heading>
         <Image
           src={`https://cataas.com/cat/says/${id}?fontSize=25&type=square&height=300&width=300&fontColor=orange`}

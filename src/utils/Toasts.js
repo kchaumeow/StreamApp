@@ -8,7 +8,7 @@ export const showErrorLogOpts = {
   title: "Account wasn't found.",
   description: "Check for errors in your info",
   status: "error",
-  basicToast,
+  ...basicToast,
 };
 
 export const showSuccessLogOpts = {
