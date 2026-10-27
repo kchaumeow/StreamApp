@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export default function NotFound() {
   return (

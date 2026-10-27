@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { userSelector } from "../store/selectors";
-import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router";
 
 export default function Protected({ children }) {
   const user = useSelector(userSelector);

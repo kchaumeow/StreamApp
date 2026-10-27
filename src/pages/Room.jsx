@@ -1,5 +1,5 @@
 import { Card, CardBody, Box, Heading, Input } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import Chat from "../components/Chat";
 import { useEffect, useState } from "react";
 import { getRoomById } from "../api";

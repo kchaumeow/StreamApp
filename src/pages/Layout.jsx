@@ -1,6 +1,6 @@
 import { Button, Heading, Stack, VStack } from "@chakra-ui/react";
 import DrawerRegister from "../components/DrawerRegister";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router";
 import DrawerLogin from "../components/DrawLogin";
 import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../store/selectors";

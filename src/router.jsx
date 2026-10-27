@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
 import Room from "./pages/Room";
 import Layout from "./pages/Layout";
 import Profile from "./pages/Profile";

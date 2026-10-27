@@ -1,5 +1,5 @@
 import { Card, Heading, Image } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export default function RoomCard({ id, name }) {
   return (
